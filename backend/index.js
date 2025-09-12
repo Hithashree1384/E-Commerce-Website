@@ -311,9 +311,9 @@ app.post("/clearcart", fetchUser, async (req, res) => {
 
 
 
-app.listen(4000,(error)=>{
+app.listen(PORT,(error)=>{
     if(!error){
-        console.log("Server Running on port"+port)
+        console.log("Server Running on port"+PORT)
     }
     else{
         console.log(error);
