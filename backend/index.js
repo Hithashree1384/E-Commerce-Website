@@ -9,6 +9,7 @@ const cors=require("cors");
 const { log, error } = require("console");
 const dotenv=require('dotenv')
 dotenv.config();
+const BACKEND_URL = process.env.BACKEND_URL || `http://localhost:${PORT}`;
 const Stripe=require('stripe')
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY); 
 
@@ -38,7 +39,7 @@ app.use('/images',express.static('upload/images'))
 app.post("/upload",upload.single('product'),(req,res)=>{
     res.json({
         success:1,
-        image_url:`http://localhost:${port}/images/${req.file.filename}`
+        image_url:`${BACKEND_URL}/images/${req.file.filename}`
     })
 })
 
@@ -273,8 +274,8 @@ app.post("/create-checkout-session", async (req, res) => {
       payment_method_types: ["card"],
       line_items,
       mode: "payment",
-      success_url: "http://localhost:3001/Success", // ✅ change if needed
-      cancel_url: "http://localhost:3001/Cancel",
+      success_url: "https://e-commerce-website-frontend-mb43.onrender.com/Success", // ✅ change if needed
+      cancel_url: "https://e-commerce-website-frontend-mb43.onrender.com/Cancel",
     });
 
     res.json({ url: session.url });
