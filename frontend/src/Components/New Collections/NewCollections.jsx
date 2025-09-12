@@ -6,7 +6,7 @@ import Item from '../Items/Item'
 const NewCollections = () => {
   const [new_collections,setNew_collections]=useState([])
 useEffect(() => {
-  fetch('http://localhost:4000/newcollections')
+  fetch('https://e-commerce-website-backend-f5sh.onrender.com/newcollections')
     .then((response) => response.json()) 
     .then((data) => setNew_collections(data))
     .catch((error) => console.error("Error fetching collections:", error));
