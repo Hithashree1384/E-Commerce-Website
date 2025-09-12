@@ -15,7 +15,7 @@ const LoginSignup = () => {
   const login=async()=>{
     console.log("Login executed",formData);
     let responsedata;
-    await fetch('https://e-commerce-website-backend-f5sh.onrender.com/login',{
+    await fetch('https://e-commerce-website-backend-8nct.onrender.com/login',{
       method:'POST',
       headers:{
         Accept:'application/json',
@@ -35,7 +35,7 @@ const LoginSignup = () => {
   const signup=async()=>{
     console.log("Signup executed",formData);
     let responsedata;
-    await fetch('https://e-commerce-website-backend-f5sh.onrender.com/signup',{
+    await fetch('https://e-commerce-website-backend-8nct.onrender.com/signup',{
       method:'POST',
       headers:{
         Accept:'application/json',
