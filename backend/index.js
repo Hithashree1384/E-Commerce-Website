@@ -274,8 +274,8 @@ app.post("/create-checkout-session", async (req, res) => {
       payment_method_types: ["card"],
       line_items,
       mode: "payment",
-      success_url: "https://e-commerce-website-frontend-mb43.onrender.com/Success", // ✅ change if needed
-      cancel_url: "https://e-commerce-website-frontend-mb43.onrender.com/Cancel",
+      success_url: "https://e-commerce-website-frontend-8ahq.onrender.com/Success", // ✅ change if needed
+      cancel_url: "https://e-commerce-website-frontend-8ahq.onrender.com/Cancel",
     });
 
     res.json({ url: session.url });
