@@ -1,5 +1,5 @@
 import React, { createContext, useEffect, useState } from 'react'
-
+import { useNavigate } from 'react-router-dom';
 export const ShopContext = createContext(null);
 const getDefaultCart = () => {
     let cart = {};
@@ -10,6 +10,7 @@ const getDefaultCart = () => {
 }
 
 const ShopContextProvider = (props) => {
+    const navigate = useNavigate();
     const [all_product,setAll_Product]=useState([]);
     const [cartItems, setCartItem] = useState(getDefaultCart());
     useEffect(()=>{
@@ -33,6 +34,10 @@ const ShopContextProvider = (props) => {
    
 
     const addToCart=(itemId)=>{
+        if(!localStorage.getItem('auth-token')){
+            navigate("/login"); // ✅ redirect to login if not logged in
+            return;
+        }
         setCartItem((prev)=>({...prev,[itemId]:prev[itemId]+1}))
         if(localStorage.getItem('auth-token')){
             fetch('https://e-commerce-website-backend-8nct.onrender.com/addtocart',{
