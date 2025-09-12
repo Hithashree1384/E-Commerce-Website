@@ -8,7 +8,7 @@ const Cartitems = () => {
       //✅ Checkout function
   const checkout = async () => {
     try {
-      const response = await fetch("http://localhost:4000/create-checkout-session", {
+      const response = await fetch("https://e-commerce-website-backend-f5sh.onrender.com/create-checkout-session", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
