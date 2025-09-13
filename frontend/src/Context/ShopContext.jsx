@@ -11,8 +11,10 @@ const getDefaultCart = () => {
 }
 
 const ShopContextProvider = (props) => {
+    const navigate = useNavigate();
     const [all_product,setAll_Product]=useState([]);
     const [cartItems, setCartItem] = useState(getDefaultCart());
+    
     useEffect(()=>{
         fetch('https://e-commerce-website-backend-8nct.onrender.com/allproducts')
         .then((respose)=>respose.json())
@@ -35,7 +37,6 @@ const ShopContextProvider = (props) => {
    
 
     const addToCart=(itemId)=>{
-        const navigate = useNavigate();
         if (!localStorage.getItem("auth-token")) {
     navigate("/login"); // ✅ should redirect
     return;
