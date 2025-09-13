@@ -17,7 +17,7 @@ import Cancel from './Pages/Cancel';
 function App() {
   return (
     <div>
-      <BrowserRouter>
+      
      <Navbar/>
      <Routes>
         <Route path='/' element={<Shop/>}/>
@@ -35,7 +35,7 @@ function App() {
 
      </Routes>
      <Footer/>
-     </BrowserRouter>
+     
     </div>
   );
 }
