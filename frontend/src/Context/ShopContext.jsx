@@ -1,6 +1,7 @@
 import React, { createContext, useEffect, useState } from 'react'
-export const ShopContext = createContext(null);
 import { useNavigate } from "react-router-dom";
+export const ShopContext = createContext(null);
+
 const getDefaultCart = () => {
     let cart = {};
     for (let index = 0; index < 300+ 1; index++) {
